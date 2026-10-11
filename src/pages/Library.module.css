@@ -1,0 +1,144 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.chips {
+  display: flex;
+  gap: var(--space-2);
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--space-1);
+}
+
+.sort {
+  display: inline-flex;
+}
+.select {
+  min-height: 2.25rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-raised);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+.select:hover {
+  background: var(--color-hover);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  transition: background var(--duration-fast) var(--ease);
+}
+.row:hover,
+.row:focus-within {
+  background: var(--color-raised);
+}
+
+.rowLink {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rowArt,
+.likedArt {
+  flex: none;
+  width: 3.5rem;
+}
+.likedArt {
+  display: grid;
+  place-items: center;
+  height: 3.5rem;
+  border-radius: var(--radius-md);
+  background: var(--gradient-accent);
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.rowTitle,
+.rowSub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rowTitle {
+  font-weight: 700;
+}
+.rowSub {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.rowPlay {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: var(--space-3);
+  opacity: 0;
+}
+.row:hover .rowPlay,
+.row:focus-within .rowPlay {
+  opacity: 1;
+}
+@media (hover: none) {
+  .rowPlay {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+}
+.skeletonText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+}

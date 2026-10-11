@@ -1,0 +1,87 @@
+/*
+ * Design tokens. Responsive breakpoints (CSS custom properties cannot be used in
+ * @media queries, so these literals are repeated and must stay in sync):
+ *   tablet: max-width 1023px  (sidebar becomes an icon rail)
+ *   mobile: max-width 767px   (sidebar becomes a bottom tab bar)
+ */
+:root {
+  /* Color: surfaces */
+  --color-ink: #0a090c;
+  --color-panel: #141217;
+  --color-raised: #1d1a22;
+  --color-hover: #26222d;
+  --color-border: #2a2630;
+
+  /* Color: text */
+  --color-text: #f5f1f7;
+  --color-text-muted: #a69fae;
+  --color-text-faint: #8a8393; /* AA on panel/raised surfaces */
+
+  /* Color: accent */
+  --color-accent: #d1128c; /* white text on this is 5.0:1 */
+  --color-accent-hover: #ff3fb0;
+  --color-accent-press: #c1117f;
+  --color-accent-soft: rgb(209 18 140 / 0.16);
+  --color-violet: #7c3aed;
+  --gradient-accent: linear-gradient(135deg, #d1128c 0%, #7c3aed 100%);
+  --gradient-accent-hover: linear-gradient(135deg, #ff3fb0 0%, #9b5cff 100%);
+  --color-on-accent: #fff;
+
+  /* Color: status */
+  --color-danger: #ff5c70;
+  --color-warning: #ffb547;
+  --color-success: #3ddc97;
+
+  /* Elevation */
+  --shadow-card: 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-pop: 0 16px 48px rgb(0 0 0 / 0.55);
+  --glow-accent: 0 0 24px rgb(209 18 140 / 0.45);
+  --color-scrim: rgb(5 4 7 / 0.72);
+  --color-main-tint: #1f1226;
+
+  /* Type */
+  --font-display: 'Bricolage Grotesque Variable', 'Figtree Variable', system-ui, sans-serif;
+  --font-body: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* Radius: small controls, cards, artwork, pills */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration: 200ms;
+
+  /* Layout */
+  --sidebar-width: 17rem;
+  --sidebar-rail-width: 4.75rem;
+  --player-height: 5.5rem;
+  --queue-width: 22rem;
+  --topbar-height: 4rem;
+  --tabbar-height: 3.75rem;
+  --gap: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration: 0ms;
+  }
+}

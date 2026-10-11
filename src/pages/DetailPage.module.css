@@ -1,0 +1,59 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.heading {
+  font-size: var(--text-xl);
+}
+
+.bio {
+  max-width: 40rem;
+  color: var(--color-text-muted);
+}
+
+.metaLink:hover {
+  text-decoration: underline;
+}
+
+.skeletonHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+}
+.skeletonArt {
+  flex: none;
+  aspect-ratio: 1;
+  width: clamp(9rem, 22vw, 14rem);
+}
+.skeletonText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (max-width: 767px) {
+  .skeletonHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .skeletonArt {
+    align-self: center;
+  }
+}

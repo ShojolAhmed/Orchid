@@ -1,0 +1,191 @@
+.player {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+  height: var(--player-height);
+  padding: 0 var(--space-4);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.expand {
+  flex: none;
+  width: 3.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: none;
+  cursor: pointer;
+}
+
+.art,
+.emptyArt {
+  width: 3.5rem;
+  height: 3.5rem;
+  box-shadow: var(--shadow-card);
+}
+.emptyArt {
+  flex: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-raised);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title,
+.titleStatic {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 100%;
+}
+.title:hover {
+  text-decoration: underline;
+}
+
+.subtitle,
+.subtitleStatic {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 100%;
+}
+.subtitle:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.seekRow {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.extras {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+}
+
+.devices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 15rem;
+}
+.devicesTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.device {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-accent-hover);
+  font-weight: 700;
+}
+.device small {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+.deviceOk {
+  color: var(--color-accent-hover);
+}
+.deviceInfo,
+.deviceBusy {
+  color: var(--color-text);
+}
+.deviceWarn {
+  color: var(--color-warning);
+}
+.deviceAction {
+  align-self: flex-start;
+}
+.devicesNote {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.mini,
+.miniProgress {
+  display: none;
+}
+
+/* Tablet: drop the volume slider, keep the rest */
+@media (max-width: 1023px) {
+  .player {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 2fr) auto;
+  }
+  .volumeWrap {
+    display: none;
+  }
+}
+
+/* Mobile: mini player. Tap the artwork for the full now-playing view. */
+@media (max-width: 767px) {
+  .player {
+    grid-template-columns: minmax(0, 1fr) auto;
+    height: 4rem;
+    margin: 0 var(--gap);
+    padding: 0 var(--space-2);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--color-raised);
+  }
+  .expand {
+    width: 2.75rem;
+  }
+  .art,
+  .emptyArt {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .center,
+  .extras {
+    display: none;
+  }
+  .mini {
+    display: block;
+  }
+  .miniProgress {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 2px;
+    background: var(--color-hover);
+  }
+  .miniProgress span {
+    display: block;
+    height: 100%;
+    background: var(--gradient-accent);
+  }
+}

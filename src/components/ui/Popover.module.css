@@ -1,0 +1,29 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.panel {
+  position: absolute;
+  z-index: 30;
+  width: max-content;
+  max-width: min(20rem, calc(100vw - 2rem));
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-raised);
+  box-shadow: var(--shadow-pop);
+}
+
+.bottom {
+  top: calc(100% + var(--space-2));
+}
+.top {
+  bottom: calc(100% + var(--space-2));
+}
+.alignEnd {
+  right: 0;
+}
+.alignStart {
+  left: 0;
+}

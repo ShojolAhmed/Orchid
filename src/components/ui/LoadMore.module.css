@@ -1,0 +1,13 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) 0;
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  text-align: center;
+}

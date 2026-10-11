@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Orchid: React + TypeScript + Vite single-page app (npm)
+# ---------------------------------------------------------------------------
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+
+# Environment files and secrets.
+# Only .env.example (placeholders, no real values) is committed. Anything with a
+# real client ID or any credential belongs in an ignored file such as .env.local.
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+
+# Tool caches and generated metadata
+.vite/
+.cache/
+.eslintcache
+.oxlintcache
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Test output and reports
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+# Python bytecode created by tests/e2e/*.py
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Hosting tool state (created by `vercel link` / `vercel env pull`)
+.vercel/
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.tmp
+*.temp
+
+# Local screenshots and scratch output (add real project images under docs/images/ instead)
+/screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

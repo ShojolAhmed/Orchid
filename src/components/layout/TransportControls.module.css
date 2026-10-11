@@ -1,0 +1,37 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease);
+}
+.play:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+.play:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.play:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.large {
+  gap: var(--space-4);
+}
+.large .play {
+  width: 4rem;
+  height: 4rem;
+}

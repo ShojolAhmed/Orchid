@@ -1,0 +1,86 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: var(--topbar-height);
+  padding: 0 var(--space-6);
+  background: rgb(20 18 23 / 0.6);
+  backdrop-filter: blur(14px);
+}
+
+.history,
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.right {
+  gap: var(--space-3);
+}
+
+.circle {
+  background: rgb(10 9 12 / 0.55);
+  color: var(--color-text);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.short {
+  display: none;
+}
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-warning);
+}
+
+@media (max-width: 767px) {
+  .bar {
+    padding: 0 var(--space-4);
+  }
+}
+
+/* Narrow phones: keep the badge on one line by using the short label (the long one stays in the tooltip). */
+@media (max-width: 479px) {
+  .right {
+    gap: var(--space-2);
+  }
+  .long {
+    display: none;
+  }
+  .short {
+    display: inline;
+  }
+}
+
+/* Where supported, the bar is transparent at the top and fades in as the page scrolls under it. */
+@supports (animation-timeline: scroll()) {
+  .bar {
+    background: transparent;
+    backdrop-filter: none;
+    animation: solidify linear both;
+    animation-timeline: scroll(nearest block);
+    animation-range: 0 80px;
+  }
+  @keyframes solidify {
+    to {
+      background: rgb(20 18 23 / 0.88);
+      backdrop-filter: blur(14px);
+    }
+  }
+}

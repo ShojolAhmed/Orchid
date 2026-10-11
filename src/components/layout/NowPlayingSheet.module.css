@@ -1,0 +1,84 @@
+.sheet {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  border: 0;
+  background: linear-gradient(180deg, var(--color-main-tint) 0%, var(--color-ink) 70%);
+  color: var(--color-text);
+}
+.sheet:not([open]) {
+  display: none;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-5);
+  max-width: 28rem;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-5) var(--space-5);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.context {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.art {
+  box-shadow: var(--shadow-pop);
+  border-radius: var(--radius-lg);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.title {
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 100%;
+}
+.artist {
+  color: var(--color-text-muted);
+  width: fit-content;
+}
+
+.body > :nth-last-child(3) {
+  align-self: center;
+}
+.body > :nth-last-child(2) {
+  align-self: center;
+}
+
+.note {
+  margin-top: auto;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  text-align: center;
+}
+
+.sheet::backdrop {
+  background: var(--color-scrim);
+}

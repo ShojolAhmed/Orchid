@@ -1,0 +1,92 @@
+/* Desktop: sidebar | main, player spans the bottom */
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'nav main'
+    'player player';
+  gap: var(--gap);
+  height: 100%;
+  padding: var(--gap);
+}
+
+.nav {
+  grid-area: nav;
+  display: grid;
+  min-height: 0;
+}
+.nav > * {
+  min-height: 0;
+}
+
+.main {
+  grid-area: main;
+  min-width: 0;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--color-main-tint) 0%, var(--color-panel) 22rem);
+}
+
+.content {
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+.main:focus {
+  outline: none;
+}
+
+.player {
+  grid-area: player;
+}
+
+.skip {
+  position: absolute;
+  left: var(--space-3);
+  top: -4rem;
+  z-index: 10;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 700;
+}
+.skip:focus {
+  top: var(--space-3);
+}
+
+/* Desktop with the queue open: a third column. Smaller screens overlay it instead. */
+@media (min-width: 1024px) {
+  .queueOpen {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr) var(--queue-width);
+    grid-template-areas:
+      'nav main queue'
+      'player player player';
+  }
+}
+
+@media (max-width: 1023px) {
+  .shell {
+    grid-template-columns: var(--sidebar-rail-width) minmax(0, 1fr);
+  }
+}
+
+/* Mobile: main, mini player, tab bar stacked */
+@media (max-width: 767px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      'main'
+      'player'
+      'nav';
+    gap: var(--gap);
+    padding: 0;
+    padding-top: env(safe-area-inset-top);
+  }
+  .main {
+    border-radius: 0;
+  }
+  .content {
+    padding: var(--space-3) var(--space-4) var(--space-6);
+  }
+}
